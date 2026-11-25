@@ -1,0 +1,10 @@
+# Data Kaggle tidak di-commit (lihat data/README.md)
+data/raw/*
+!data/raw/.gitkeep
+# Kredensial: JANGAN PERNAH di-commit
+kaggle.json
+.env
+# Python
+__pycache__/
+.venv/
+.ipynb_checkpoints/

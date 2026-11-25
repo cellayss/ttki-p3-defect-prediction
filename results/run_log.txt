@@ -1,0 +1,28 @@
+waktu run      : 2026-11-25T21:41:22
+python         : 3.9.6 (Darwin)
+numpy/pandas   : 2.0.2 / 2.3.3
+scikit-learn   : 1.6.1
+seed           : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+split          : stratified 60/20/20 setelah hapus duplikat & kasus inkonsisten
+file data      : ['CM1.arff', 'JM1.arff', 'KC1.arff', 'PC1.arff']
+
+Ringkasan TEST (rata-rata ± std dari 10 seed):
+                     f1        pr_auc        recall_at_20loc          ifa           popt       
+                   mean    std   mean    std            mean    std  mean     std   mean    std
+project model                                                                                  
+CM1     LR        0.077  0.100  0.350  0.138           0.238  0.190   2.5   2.759  0.600  0.113
+        ManualUp    NaN    NaN    NaN    NaN           0.238  0.092  13.2  10.347  0.548  0.129
+        RF        0.020  0.063  0.251  0.061           0.200  0.121   4.1   3.929  0.504  0.117
+        Random      NaN    NaN    NaN    NaN           0.200  0.087   6.0   4.761  0.546  0.086
+JM1     LR        0.203  0.017  0.410  0.015           0.088  0.019   0.0   0.000  0.367  0.019
+        ManualUp    NaN    NaN    NaN    NaN           0.366  0.024   5.7   6.325  0.676  0.018
+        RF        0.279  0.018  0.415  0.018           0.141  0.027   0.1   0.316  0.431  0.030
+        Random      NaN    NaN    NaN    NaN           0.188  0.019   3.9   3.035  0.495  0.033
+KC1     LR        0.279  0.062  0.456  0.039           0.130  0.037   0.3   0.483  0.402  0.028
+        ManualUp    NaN    NaN    NaN    NaN           0.400  0.046   7.8   2.616  0.693  0.019
+        RF        0.379  0.069  0.482  0.042           0.175  0.049   0.0   0.000  0.477  0.029
+        Random      NaN    NaN    NaN    NaN           0.198  0.042   3.3   3.653  0.497  0.040
+PC1     LR        0.167  0.115  0.352  0.081           0.233  0.095   1.4   1.578  0.675  0.050
+        ManualUp    NaN    NaN    NaN    NaN           0.183  0.086  55.8   6.303  0.517  0.048
+        RF        0.294  0.160  0.449  0.074           0.317  0.141   0.5   0.707  0.706  0.042
+        Random      NaN    NaN    NaN    NaN           0.167  0.096  10.1   8.075  0.474  0.136

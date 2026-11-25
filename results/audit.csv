@@ -1,0 +1,5 @@
+project,file,rows,columns,label_col,loc_col,missing_cells,inf_cells,negative_cells,duplicate_rows_exact,inconsistent_feature_groups,defective,defect_ratio,loc_missing_or_zero,forbidden_cols_present
+CM1,CM1.arff,327,38,Defective,LOC_TOTAL,0,0,0,0,0,42,0.1284,0,[]
+JM1,JM1.arff,7782,22,label,LOC_TOTAL,0,0,0,0,0,1672,0.2149,0,[]
+KC1,KC1.arff,1183,22,Defective,LOC_TOTAL,0,0,0,0,0,314,0.2654,0,[]
+PC1,PC1.arff,705,38,Defective,LOC_TOTAL,0,0,0,0,0,61,0.0865,2,[]
