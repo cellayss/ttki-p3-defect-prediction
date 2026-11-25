@@ -23,7 +23,7 @@ Diunduh 12 November 2026. Cara mengunduh dan lisensi: [`data/README.md`](data/RE
 CSV **tidak** di-commit.
 
 ## Environment
-- Diuji dengan **Python 3.9.6 pada macOS** (Apple Silicon/Intel: [pilih]);
+- Diuji dengan **Python 3.9.6 pada macOS** (Apple Silicon);
   numpy 2.0.2, pandas 2.3.3, scikit-learn 1.6.1.
   Versi paket lengkap ada di `environment-freeze.txt`.
 
@@ -83,7 +83,7 @@ flowchart TD
 
 ## Penggunaan AI
 Kerangka kode dan dokumentasi awal disusun dengan bantuan Claude (Anthropic);
-seluruh kode telah dijalankan dan diperiksa oleh kelompok. [sesuaikan dengan kebijakan kelas]
+seluruh kode telah dijalankan dan diperiksa oleh kelompok. 
 
 ## Lisensi
 Kode: MIT (`LICENSE`). Dataset mengikuti lisensi di halaman Kaggle.

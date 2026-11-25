@@ -8,9 +8,15 @@ Data **tidak disimpan** di repositori ini. Unduh sendiri dari Kaggle.
 | Pemilik | aczy156 |
 | URL | https://www.kaggle.com/datasets/aczy156/nasa-software-defect-prediction |
 | Tanggal unduh | 12 November 2026 |
-| Versi / ukuran | [isi dari halaman Kaggle] |
-| Lisensi | [isi dari halaman Kaggle] |
+| Versi / ukuran | 1.79MB |
+| Lisensi | Unknown — tidak dicantumkan oleh pengunggah Kaggle |
 | Asal data primer | NASA Metrics Data Program (MDP), via PROMISE |
+
+**Catatan lisensi.** Halaman Kaggle tidak mencantumkan lisensi. Data primer berasal dari
+NASA Metrics Data Program yang dipublikasikan untuk riset melalui repositori PROMISE.
+Karena status lisensi salinan Kaggle tidak jelas, data hanya dipakai untuk keperluan
+akademik non-komersial dan **tidak didistribusikan ulang** di repositori ini;
+pembaca diminta mengunduh sendiri dari tautan Kaggle di atas.
 
 ## Cara mengunduh
 
