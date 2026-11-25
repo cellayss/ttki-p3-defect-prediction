@@ -1,0 +1,52 @@
+waktu run      : 2026-11-25T22:35:01
+python         : 3.9.6 (Darwin)
+numpy/pandas   : 2.0.2 / 2.3.3
+scikit-learn   : 1.6.1   scipy: 1.13.1
+seed           : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+proyek         : ['KC1', 'CM1', 'JM1', 'PC1']
+konfigurasi    : model{LR,RF} × weighting{none,balanced} × ranking{prob,density} + Random + ManualUp
+uji statistik  : Wilcoxon signed-rank berpasangan per seed, koreksi Holm per proyek × keluarga × metrik
+
+Ringkasan TEST (rata-rata):
+                            f1  recall  precision  recall_at_20loc   ifa   popt
+project config                                                                 
+CM1     LR-bal-density   0.358   0.612      0.255            0.375   3.4  0.678
+        LR-bal-prob      0.358   0.612      0.255            0.238   3.0  0.604
+        LR-none-density  0.077   0.050      0.208            0.350   1.6  0.674
+        LR-none-prob     0.077   0.050      0.208            0.238   2.5  0.600
+        ManualUp           NaN     NaN        NaN            0.238  13.2  0.548
+        RF-bal-density   0.020   0.012      0.050            0.238   3.6  0.610
+        RF-bal-prob      0.020   0.012      0.050            0.225   2.5  0.564
+        RF-none-density  0.020   0.012      0.050            0.250   5.1  0.579
+        RF-none-prob     0.020   0.012      0.050            0.200   4.1  0.504
+        Random             NaN     NaN        NaN            0.200   6.0  0.546
+JM1     LR-bal-density   0.433   0.577      0.347            0.373   2.6  0.685
+        LR-bal-prob      0.433   0.577      0.347            0.086   0.0  0.367
+        LR-none-density  0.203   0.123      0.583            0.377   2.1  0.686
+        LR-none-prob     0.203   0.123      0.583            0.088   0.0  0.367
+        ManualUp           NaN     NaN        NaN            0.366   5.7  0.676
+        RF-bal-density   0.258   0.167      0.574            0.371   4.1  0.678
+        RF-bal-prob      0.258   0.167      0.574            0.142   0.0  0.435
+        RF-none-density  0.279   0.187      0.553            0.381   3.9  0.679
+        RF-none-prob     0.279   0.187      0.553            0.141   0.1  0.431
+        Random             NaN     NaN        NaN            0.188   3.9  0.495
+KC1     LR-bal-density   0.456   0.554      0.390            0.381   9.1  0.701
+        LR-bal-prob      0.456   0.554      0.390            0.132   0.4  0.399
+        LR-none-density  0.279   0.184      0.582            0.383   9.6  0.697
+        LR-none-prob     0.279   0.184      0.582            0.130   0.3  0.402
+        ManualUp           NaN     NaN        NaN            0.400   7.8  0.693
+        RF-bal-density   0.358   0.268      0.543            0.398   1.6  0.688
+        RF-bal-prob      0.358   0.268      0.543            0.187   0.2  0.473
+        RF-none-density  0.379   0.295      0.535            0.408   1.8  0.695
+        RF-none-prob     0.379   0.295      0.535            0.175   0.0  0.477
+        Random             NaN     NaN        NaN            0.198   3.3  0.497
+PC1     LR-bal-density   0.388   0.800      0.258            0.475   2.4  0.758
+        LR-bal-prob      0.388   0.800      0.258            0.233   1.6  0.693
+        LR-none-density  0.167   0.108      0.418            0.450   2.4  0.739
+        LR-none-prob     0.167   0.108      0.418            0.233   1.4  0.675
+        ManualUp           NaN     NaN        NaN            0.183  55.8  0.517
+        RF-bal-density   0.180   0.117      0.417            0.442   1.9  0.772
+        RF-bal-prob      0.180   0.117      0.417            0.317   0.5  0.729
+        RF-none-density  0.294   0.217      0.539            0.475   1.6  0.790
+        RF-none-prob     0.294   0.217      0.539            0.317   0.5  0.706
+        Random             NaN     NaN        NaN            0.167  10.1  0.474

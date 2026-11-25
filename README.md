@@ -2,8 +2,8 @@
 
 Proyek Tata Tulis Karya Ilmiah, Sarjana Terapan Teknik Informatika PENS, 2026.
 Anggota Kelompok : 
-[Ashlihatul Sotya Mahendra – 3124600110], 
-[Revalina Salsabila – 3124600120].
+Ashlihatul Sotya Mahendra – 3124600110,
+Revalina Salsabila – 3124600120.
 
 ## Research question
 Pada data NASA MDP dari Kaggle, bagaimana *class weighting* dan strategi
@@ -13,7 +13,7 @@ dibandingkan urutan acak dan ManualUp?
 
 ## Status
 - [x] Minggu 2 – audit data, environment, baseline (LR, RF, Random, ManualUp)
-- [ ] Minggu 3 – Skenario A (class weighting), B2 (probabilitas ÷ LOC)
+- [x] Minggu 3 – Skenario A (class weighting), B2 (probabilitas ÷ LOC), uji Wilcoxon, gambar
 - [ ] Minggu 4 – paper IMRAD
 
 ## Data
@@ -33,13 +33,13 @@ source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python -m src.run_baseline
 ```
-Waktu run baseline (4 proyek × 10 seed): ± [1] menit.
+Waktu run baseline (4 proyek × 10 seed): ± 1 menit; eksperimen Minggu 3 ± [1] menit.
 
 ## Cara menjalankan (urutan)
 1. Unduh data ke `data/raw/` (lihat `data/README.md`).
 2. `notebooks/01_eda.ipynb` – audit file, kolom, duplikat, rasio kelas.
 3. `notebooks/02_baseline.ipynb` – atau langsung: `python -m src.run_baseline`
-4. `notebooks/03_experiment.ipynb` – skenario Minggu 3.
+4. `notebooks/03_experiment.ipynb` – atau langsung: `python -m src.run_experiment`
 
 ## Protokol (dibekukan sebelum melihat hasil test)
 | Item | Keputusan |
@@ -53,7 +53,16 @@ Waktu run baseline (4 proyek × 10 seed): ± [1] menit.
 | Baseline urutan | Random, ManualUp (LOC terkecil dulu) |
 | Metrik klasifikasi | precision, recall, F1 (threshold 0,5), PR-AUC, ROC-AUC |
 | Metrik anggaran | Recall@20% LOC, precision@20% LOC, % modul dibuka, IFA, Popt |
+| Skenario A | `class_weight="balanced"` pada LR dan RF |
+| Skenario B2 | urutan inspeksi menurut probabilitas ÷ (LOC+1) |
+| Skenario C | inspeksi dari atas urutan sampai 20% total LOC |
+| Uji statistik | Wilcoxon signed-rank berpasangan per seed (test), koreksi Holm per proyek × keluarga × metrik (lihat catatan di bawah) |
 | Definisi "ditemukan" | jumlah **modul** cacat yang terinspeksi (NASA hanya punya label biner) |
+
+> **Catatan koreksi Holm.** Versi awal mengoreksi lintas proyek. Dengan 10 seed, p minimum
+> Wilcoxon adalah 0,002, sehingga koreksi atas 64 uji (keluarga `vs_reference`) tidak mungkin
+> mencapai p < 0,05. Koreksi kemudian diterapkan per proyek, karena setiap proyek merupakan
+> replikasi terpisah. Perubahan ini dibuat sebelum penulisan paper dan dilaporkan di Methods.
 
 ## Output
 | File | Isi |
@@ -61,7 +70,12 @@ Waktu run baseline (4 proyek × 10 seed): ± [1] menit.
 | `results/audit.csv` | audit data mentah per proyek |
 | `results/cleaning.csv` | jumlah baris sebelum/sesudah pembersihan |
 | `results/metrics.csv` | metrik per proyek × model × seed × set |
-| `results/run_log.txt` | versi Python/paket, seed, ringkasan hasil test |
+| `results/run_log.txt` | versi Python/paket, seed, ringkasan hasil test (baseline) |
+| `results/metrics_experiment.csv` | semua metrik eksperimen Minggu 3 (validation & test) |
+| `results/summary_test.csv` | rata-rata ± std per proyek × konfigurasi (test) |
+| `results/stats_wilcoxon.csv` | uji Wilcoxon + p Holm antar-skenario |
+| `results/run_log_experiment.txt` | versi, seed, ringkasan eksperimen |
+| `figures/recall20_test.png`, `figures/ifa_test.png` | grafik utama |
 
 ## Alur kerja
 ```mermaid
